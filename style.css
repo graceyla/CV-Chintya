@@ -1,0 +1,1312 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f0ff,
+            #eaf7ff,
+            #f9f5ff
+        );
+
+    color: #302d45;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.bubble {
+    position: fixed;
+
+    border-radius: 50%;
+
+    filter: blur(3px);
+
+    opacity: .35;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.bubble-1 {
+    width: 280px;
+    height: 280px;
+
+    background: #d8c8ff;
+
+    top: -100px;
+    left: -100px;
+}
+
+.bubble-2 {
+    width: 230px;
+    height: 230px;
+
+    background: #bce8ff;
+
+    right: -80px;
+    top: 40%;
+}
+
+.bubble-3 {
+    width: 320px;
+    height: 320px;
+
+    background: #e5d8ff;
+
+    bottom: -160px;
+    left: 40%;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 100px;
+
+    padding: 80px 8%;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.small-title {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #8a7bb7;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: .95;
+
+    font-weight: 600;
+}
+
+.hero h1 span {
+
+    display: block;
+
+    color: #8f7ac7;
+}
+
+.description {
+
+    margin-top: 30px;
+
+    max-width: 450px;
+
+    line-height: 1.8;
+
+    color: #6f6b80;
+}
+
+.scroll-hint {
+
+    margin-top: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #75679c;
+}
+
+.scroll-hint span {
+
+    font-size: 25px;
+
+    animation: bounce 1.5s infinite;
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.profile-card {
+
+    width: 310px;
+
+    padding: 15px 15px 25px;
+
+    background: rgba(255,255,255,.55);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 60px rgba(92,79,135,.15);
+
+    transform: rotate(3deg);
+
+    transition: .4s;
+}
+
+.profile-card:hover {
+
+    transform:
+        rotate(0deg)
+        translateY(-10px);
+}
+
+.photo-frame {
+
+    height: 390px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #e5dcf8;
+}
+
+.photo-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.profile-name {
+
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+.profile-name h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+}
+
+.profile-name p {
+
+    font-size: 13px;
+
+    color: #817b91;
+
+    margin-top: 5px;
+}
+
+
+/* =====================================================
+   BOOKSHELF
+===================================================== */
+
+.bookshelf-section {
+
+    min-height: 100vh;
+
+    padding: 100px 7%;
+}
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 80px;
+}
+
+.section-title p {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #8b7bb6;
+
+    font-weight: 700;
+}
+
+.section-title h2 {
+
+    margin-top: 15px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+
+    line-height: 1.1;
+}
+
+.section-title h2 span {
+
+    color: #8b7bc1;
+}
+
+
+/* =====================================================
+   SHELF
+===================================================== */
+
+.bookshelf {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    position: relative;
+
+    padding-bottom: 35px;
+}
+
+.books {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    gap: 18px;
+
+    min-height: 330px;
+}
+
+
+/* =====================================================
+   BOOKS
+===================================================== */
+
+.book {
+
+    border: none;
+
+    cursor: pointer;
+
+    color: white;
+
+    width: 145px;
+
+    height: 290px;
+
+    border-radius:
+        8px 8px
+        4px 4px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 20px 15px;
+
+    box-shadow:
+        8px 12px 20px
+        rgba(63,57,86,.18);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.book::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 3px;
+
+    background:
+        rgba(255,255,255,.35);
+}
+
+.book:hover {
+
+    transform:
+        translateY(-30px)
+        rotate(-2deg);
+
+    box-shadow:
+        10px 25px 30px
+        rgba(63,57,86,.25);
+}
+
+.book-number {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+.book-title {
+
+    font-family:
+        "Playfair Display", serif;
+
+    font-size: 24px;
+
+    line-height: 1.1;
+}
+
+.book-icon {
+
+    font-size: 25px;
+
+    text-align: right;
+}
+
+
+/* BOOK COLORS */
+
+.book-1 {
+
+    height: 275px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #a899d4,
+            #8371b7
+        );
+}
+
+.book-2 {
+
+    height: 310px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #8fc9e8,
+            #62a8cf
+        );
+}
+
+.book-3 {
+
+    height: 290px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c8b6e9,
+            #9e88cb
+        );
+}
+
+.book-4 {
+
+    height: 325px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #9fd5df,
+            #69b4c4
+        );
+}
+
+.book-5 {
+
+    height: 280px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #b7a7dc,
+            #8d78bd
+        );
+}
+
+
+/* =====================================================
+   SHELF BOARD
+===================================================== */
+
+.shelf-board {
+
+    height: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b9afd1,
+            #e0daf0,
+            #b9afd1
+        );
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 12px 20px
+        rgba(70,63,92,.18);
+}
+
+.shelf-board::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 10px;
+
+    background: #aaa0c4;
+}
+
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.book-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(31,28,48,.82);
+
+    backdrop-filter: blur(12px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .5s;
+
+    z-index: 100;
+}
+
+.book-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =====================================================
+   REAL BOOK
+===================================================== */
+
+.real-book {
+
+    width: min(900px, 88vw);
+
+    height: 560px;
+
+    position: relative;
+
+    perspective: 2000px;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 1s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =====================================================
+   COVER
+===================================================== */
+
+.book-cover {
+    transform-origin: left center;
+    transform-style: preserve-3d;
+
+    transition:
+        transform 1.2s
+        cubic-bezier(.2,.8,.2,1);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    position: absolute;
+
+    width: 50%;
+    height: 100%;
+
+    left: 25%;
+    top: 0;
+
+    z-index: 10;
+
+    transform-origin: left center;
+
+    transform-style: preserve-3d;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9381c3,
+            #6f5ba5
+        );
+
+    border-radius:
+        8px 15px
+        15px 8px;
+
+    box-shadow:
+        15px 20px 40px
+        rgba(0,0,0,.35);
+
+    transition:
+        transform 1.5s
+        cubic-bezier(.2,.8,.2,1);
+        
+        #realBook {
+    transition:
+        transform 0.8s
+        ease;
+}
+}
+
+/* OPEN COVER */
+
+.book-overlay.active .book-cover {
+
+    transform:
+        rotateY(-180deg);
+}
+
+
+/* =====================================================
+   COVER CONTENT
+===================================================== */
+
+.cover-content {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    padding: 40px;
+
+    backface-visibility: hidden;
+}
+
+.cover-content > span:first-child {
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    opacity: .8;
+
+    margin-bottom: 40px;
+}
+
+.cover-content h2 {
+
+    font-family:
+        "Playfair Display", serif;
+
+    font-size: 60px;
+
+    line-height: .95;
+}
+
+.cover-line {
+
+    width: 70px;
+
+    height: 2px;
+
+    background: rgba(255,255,255,.7);
+
+    margin: 30px;
+}
+
+.cover-content p {
+
+    font-size: 13px;
+
+    opacity: .8;
+}
+
+.cover-symbol {
+
+    margin-top: 50px;
+
+    font-size: 30px;
+}
+
+
+/* =====================================================
+   INSIDE BOOK
+===================================================== */
+
+.book-inside {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    background: #fdfaf2;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.4);
+
+    transform:
+        scale(.8);
+
+    opacity: 0;
+
+    transition:
+        opacity .5s .5s,
+        transform .8s .5s;
+}
+
+
+/* SHOW INSIDE */
+
+.book-overlay.active .book-inside {
+
+    opacity: 1;
+
+    transform:
+        scale(1);
+}
+
+
+/* =====================================================
+   PAGES
+===================================================== */
+
+.book-page {
+
+    width: 50%;
+
+    height: 100%;
+
+    padding: 55px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f7f3e8,
+            #fffdf7
+        );
+
+    overflow: hidden;
+}
+
+.left-page {
+
+    border-right:
+        1px solid
+        rgba(100,90,80,.1);
+}
+
+.right-page {
+
+    background:
+        linear-gradient(
+            90deg,
+            #fffdf7,
+            #f8f4e9
+        );
+}
+
+
+/* =====================================================
+   PAGE DECORATION
+===================================================== */
+
+.book-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 20px;
+
+    border:
+        1px solid
+        rgba(150,135,120,.15);
+
+    pointer-events: none;
+}
+
+.book-page > div {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   PAGE TEXT
+===================================================== */
+
+.page-label {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #9586b7;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.book-page h2 {
+
+    font-family:
+        "Playfair Display", serif;
+
+    font-size: 48px;
+
+    line-height: .95;
+
+    color: #675786;
+}
+
+.line {
+
+    width: 55px;
+
+    height: 2px;
+
+    background: #a99acb;
+
+    margin: 22px 0;
+}
+
+.book-page p {
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: #77727c;
+
+    margin-bottom: 12px;
+}
+
+.book-page strong {
+
+    color: #645582;
+}
+
+
+/* =====================================================
+   IMAGE INSIDE PAGE
+===================================================== */
+
+.page-photo {
+
+    width: 150px;
+
+    height: 170px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    box-shadow:
+        5px 8px 20px
+        rgba(60,50,70,.15);
+
+    transform: rotate(-3deg);
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skill {
+
+    margin-bottom: 15px;
+}
+
+.skill-name {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    margin-bottom: 6px;
+}
+
+.skill-bar {
+
+    height: 7px;
+
+    background: #e8e2ee;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.skill-fill {
+
+    height: 100%;
+
+    width: 80%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #9b8ac7,
+            #83cce3
+        );
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline {
+
+    border-left:
+        2px solid #c9bddf;
+
+    padding-left: 20px;
+}
+
+.timeline-item {
+
+    margin-bottom: 20px;
+
+    position: relative;
+}
+
+.timeline-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #9b8ac7;
+
+    left: -25px;
+
+    top: 5px;
+}
+
+.timeline-item h3 {
+
+    font-size: 13px;
+
+    color: #645582;
+
+    margin-bottom: 4px;
+}
+
+.timeline-item span {
+
+    font-size: 10px;
+
+    color: #aaa0ad;
+}
+
+
+/* =====================================================
+   PAGE NUMBER
+===================================================== */
+
+.page-number {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    font-size: 10px;
+
+    color: #aaa2ae;
+}
+
+.left-page .page-number {
+
+    left: 30px;
+}
+
+.right-page .page-number {
+
+    right: 30px;
+}
+
+
+/* =====================================================
+   CLOSE
+===================================================== */
+
+.close-book {
+
+    position: absolute;
+
+    top: 30px;
+
+    right: 40px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.12);
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 200;
+
+    transition: .3s;
+}
+
+.close-book:hover {
+
+    background:
+        rgba(255,255,255,.25);
+
+    transform: rotate(90deg);
+}
+
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.book-controls {
+
+    margin-top: 25px;
+
+    width: min(900px, 88vw);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.book-controls button {
+
+    border:
+        1px solid
+        rgba(255,255,255,.3);
+
+    background:
+        rgba(255,255,255,.1);
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.book-controls button:hover {
+
+    background:
+        rgba(255,255,255,.25);
+
+    transform: translateY(-2px);
+}
+
+.book-controls span {
+
+    color: white;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+}
+
+.keyboard-hint {
+
+    margin-top: 12px;
+
+    color:
+        rgba(255,255,255,.5);
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #817a91;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:800px) {
+
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 50px;
+    }
+
+    .description {
+
+        margin:
+            30px auto 0;
+    }
+
+    .scroll-hint {
+
+        justify-content: center;
+    }
+
+    .books {
+
+        flex-wrap: wrap;
+    }
+
+    .book {
+
+        width: 100px;
+
+        height: 230px;
+    }
+
+    .book-title {
+
+        font-size: 17px;
+    }
+
+    .real-book {
+
+        width: 90vw;
+
+        height: 450px;
+    }
+
+    .book-page {
+
+        padding: 30px;
+    }
+
+    .book-page h2 {
+
+        font-size: 34px;
+    }
+
+}
+
+@media(max-width:550px) {
+
+    .profile-card {
+
+        width: 260px;
+    }
+
+    .photo-frame {
+
+        height: 320px;
+    }
+
+    .section-title h2 {
+
+        font-size: 35px;
+    }
+
+    .books {
+
+        gap: 7px;
+    }
+
+    .book {
+
+        width: 70px;
+
+        height: 190px;
+
+        padding: 10px 7px;
+    }
+
+    .book-title {
+
+        font-size: 12px;
+    }
+
+    .book-icon {
+
+        font-size: 16px;
+    }
+
+    .real-book {
+
+        height: 430px;
+    }
+
+    .book-page {
+
+        padding: 22px;
+    }
+
+    .book-page h2 {
+
+        font-size: 27px;
+    }
+
+    .book-page p {
+
+        font-size: 10px;
+    }
+
+    .page-photo {
+
+        width: 90px;
+
+        height: 110px;
+    }
+
+}

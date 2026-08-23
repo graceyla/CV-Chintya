@@ -1,0 +1,369 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My CV Book</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2"></div>
+    <div class="bubble bubble-3"></div>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                WELCOME TO MY PERSONAL LIBRARY
+            </p>
+
+            <h1>
+                Hello, I'm
+                <span>Chintya</span>
+            </h1>
+
+            <p class="description">
+                Welcome to my little digital library.
+                Click a book and discover my story,
+                experiences, skills, and fun facts.
+            </p>
+
+            <div class="scroll-hint">
+                <span>↓</span>
+                Explore meee!
+            </div>
+
+        </div>
+
+
+        <!-- FOTO -->
+        <div class="profile-card">
+
+            <div class="photo-frame">
+
+                <img
+                    src="images/WhatsApp Image 2026-08-22 at 11.59.48.jpeg"
+                    alt="Foto Saya"
+                >
+
+            </div>
+
+            <div class="profile-name">
+
+                <h2>Chintya Graceyla Hutagalung</h2>
+
+                <p>
+                    Student • Extrovert • Sporty
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BOOKSHELF ================= -->
+
+    <section class="bookshelf-section">
+
+        <div class="section-title">
+
+            <p>MY PERSONAL LIBRARY</p>
+
+            <h2>
+                Pick a book to
+                <br>
+                <span>know me better.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="bookshelf">
+
+            <div class="books">
+
+                <!-- BOOK 1 -->
+
+                <button
+                    class="book book-1"
+                    onclick="openBook(1)"
+                >
+
+                    <span class="book-number">
+                        01
+                    </span>
+
+                    <span class="book-title">
+                        ABOUT<br>ME
+                    </span>
+
+                    <span class="book-icon">
+                        ⋆˚꩜｡
+                    </span>
+
+                </button>
+
+
+                <!-- BOOK 2 -->
+
+                <button
+                    class="book book-2"
+                    onclick="openBook(2)"
+                >
+
+                    <span class="book-number">
+                        02
+                    </span>
+
+                    <span class="book-title">
+                        EDU<br>CATION
+                    </span>
+
+                    <span class="book-icon">
+                        ✦
+                    </span>
+
+                </button>
+
+
+                <!-- BOOK 3 -->
+
+                <button
+                    class="book book-3"
+                    onclick="openBook(3)"
+                >
+
+                    <span class="book-number">
+                        03
+                    </span>
+
+                    <span class="book-title">
+                        EXPERI<br>ENCE
+                    </span>
+
+                    <span class="book-icon">
+                        ☼
+                    </span>
+
+                </button>
+
+
+                <!-- BOOK 4 -->
+
+                <button
+                    class="book book-4"
+                    onclick="openBook(4)"
+                >
+
+                    <span class="book-number">
+                        04
+                    </span>
+
+                    <span class="book-title">
+                        SKILLS
+                    </span>
+
+                    <span class="book-icon">
+                        ✧
+                    </span>
+
+                </button>
+
+
+                <!-- BOOK 5 -->
+
+                <button
+                    class="book book-5"
+                    onclick="openBook(5)"
+                >
+
+                    <span class="book-number">
+                        05
+                    </span>
+
+                    <span class="book-title">
+                        FUN<br>FACTS
+                    </span>
+
+                    <span class="book-icon">
+                        ★
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="shelf-board"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BOOK OPENING ANIMATION
+    ====================================================== -->
+
+    <div
+        class="book-overlay"
+        id="bookOverlay"
+    >
+
+        <button
+            class="close-book"
+            onclick="closeBook()"
+        >
+            ×
+        </button>
+
+
+        <!-- BOOK -->
+
+        <div
+            class="real-book"
+            id="realBook"
+        >
+
+
+            <!-- COVER -->
+
+            <div
+                class="book-cover"
+                id="bookCover"
+            >
+
+                <div class="cover-content">
+
+                    <span id="coverNumber">
+                        01
+                    </span>
+
+                    <h2 id="coverTitle">
+                        ABOUT<br>ME
+                    </h2>
+
+                    <div class="cover-line"></div>
+
+                    <p>
+                        a book about me
+                    </p>
+
+                    <span class="cover-symbol">
+                        ♡
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- INSIDE BOOK -->
+
+            <div class="book-inside">
+
+
+                <!-- LEFT PAGE -->
+
+                <div class="book-page left-page">
+
+                    <span
+                        class="page-number"
+                        id="leftNumber"
+                    >
+                        01
+                    </span>
+
+                    <div id="leftContent">
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT PAGE -->
+
+                <div class="book-page right-page">
+
+                    <span
+                        class="page-number"
+                        id="rightNumber"
+                    >
+                        02
+                    </span>
+
+                    <div id="rightContent">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTROLS -->
+
+        <div class="book-controls">
+
+            <button onclick="previousPage()">
+                ← Previous
+            </button>
+
+            <span id="chapterTitle">
+                ABOUT ME
+            </span>
+
+            <button onclick="nextPage()">
+                Next →
+            </button>
+
+        </div>
+
+
+        <p class="keyboard-hint">
+            Tip: gunakan ← → untuk membalik halaman
+        </p>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Made with ♡ by
+            <strong>Chintyaaa</strong>
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
